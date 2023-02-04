@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     filename = 'short'
     data = pd.read_csv(filename+'.csv')
-    sentences = data['Sentence'].tolist()
+    sentences = data['sentence'].tolist()
     phonemes = []
     for i in range(len(sentences)):
         phonemes.append(phonemize(sentences[i]))
