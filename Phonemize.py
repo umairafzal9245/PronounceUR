@@ -10,8 +10,14 @@ def phonemize(sentence):
 
 if __name__ == '__main__':
 
-    # filename = '../data/short'
-    # data = pd.read_csv(filename+'.csv')
-    # data['phonemes'] = data['sentence'].apply(phonemize)
-    # data.to_csv(filename+'phonemized'+'.csv', index=False)
-    print(phonemize('جنگ چھڑنے سے پہلے بروے نے مجھے کچھ آڑھا سیدھا طریقہ اور مشق سمجھائے'))
+    filename = 'short'
+    data = pd.read_csv(filename+'.csv')
+    sentences = data['Sentence'].tolist()
+    phonemes = []
+    for i in range(len(sentences)):
+        phonemes.append(phonemize(sentences[i]))
+        if i%50000 == 0:
+            print(i)
+
+    data['Phonemes'] = phonemes
+    data.to_csv(filename+'phonemized'+'.csv', index=False)
