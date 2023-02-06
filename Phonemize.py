@@ -31,7 +31,6 @@ def scoreSentence(sentence,phonemes):
                 score += 1
                 triphones.remove(triphone)
                 if triphones == []:
-                    triphones = generateTriphones(phonemes)
                     flag = -1
     return score, flag
 
