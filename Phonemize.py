@@ -52,8 +52,8 @@ def Process(fil):
     i = 1
     while len(data) > 0:
         print('Processing File: '+str(i))
-        sentencee = data[:20000]
-        data = data[20000:]
+        sentencee = data[:10000]
+        data = data[10000:]
         sentences = sentencee['sentence'].tolist()
         phonemes = []
         scores = []
