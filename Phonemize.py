@@ -58,7 +58,9 @@ def Process(fil):
         phonemes = []
         scores = []
         for j in range(len(sentences)):
-            print('Processing Sentence: '+str(j))
+            if j%1000 == 0:
+                print('Processing Sentence: '+str(j))
+                print(len(triphones))
             phones = phonemize(sentences[j])
             score, flag = scoreSentence(phones,phonemes)
             if flag == -1:
