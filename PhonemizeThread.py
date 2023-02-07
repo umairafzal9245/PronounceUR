@@ -81,9 +81,9 @@ def Process(fil):
             thread.start()
         for thread in threads:
             thread.join()
-        data['Phonemes'] = phonemes_list
-        data['score'] = scores_list
-        data.to_csv(fil + 'phonemized' + str(i) + '.csv', index=False)
+        sentencee['Phonemes'] = phonemes_list
+        sentencee['score'] = scores_list
+        sentencee.to_csv(fil + 'phonemized' + str(i) + '.csv', index=False)
         i += 1
 
 

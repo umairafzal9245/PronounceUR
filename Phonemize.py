@@ -66,9 +66,9 @@ def Process(fil):
                 data = []
             phonemes.append(phones)
             scores.append(score)
-        data['Phonemes'] = phonemes
-        data['score'] = scores
-        data.to_csv(fil+'phonemized'+str(i)+'.csv', index=False)
+        sentencee['Phonemes'] = phonemes
+        sentencee['score'] = scores
+        sentencee.to_csv(fil+'phonemized'+str(i)+'.csv', index=False)
         i += 1
 
 if __name__ == '__main__':
