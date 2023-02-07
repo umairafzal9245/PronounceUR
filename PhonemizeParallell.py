@@ -52,6 +52,7 @@ def Process(fil, chunkStart, chunkEnd):
     for j in range(len(sentences)):
         if j%1000 == 0:
             print('Processing Sentence: '+str(j))
+            print('Chunk: '+str(chunkStart)+' to '+str(chunkEnd))
             print(len(triphones))
         phones = phonemize(sentences[j])
         score, flag = scoreSentence(phones,phonemes)
